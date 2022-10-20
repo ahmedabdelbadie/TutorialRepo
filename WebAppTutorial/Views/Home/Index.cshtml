@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model HomeEmployeesViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.PageTitle = Model.PageTitle;
+
+}
+
+@*<div class="card" style="width: 18rem;">
+    <img src="~/images/car.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+    </tr>
+    @foreach(var emp in Model.Employees){
+        <tr>
+            <td>@emp.Id</td>
+            <td class="btn btn-primary">
+                @Html.ActionLink(@emp.Name, "Details", new { id = emp.Id })
+            </td>
+            <td>@emp.Department</td>
+
+        </tr>
+    }
+</table>*@
+
+<div class="row justify-content-between">
+
+    @foreach (var emp in Model.Employees)
+    {
+        var photoPath = "~/images/" + (emp.photoPath ?? "car.png");
+        <div class="card" style="width: 33%;">
+            <img src="@photoPath" class="card-img-top imageThumb justify-content-center" asp-append-version="true">
+            <div class="card-body">
+                <h5 class="card-title">@emp.Name</h5>
+                <button type="button" class="btn btn-secondary">
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@emp.Id" class="" style="text-decoration:none;color:white;">View</a>
+                    @*@Html.ActionLink("View", "Details", new { id = emp.Id },new {style="text-decoration:none;color:white;"})*@
+                </button>
+
+                <button type="button" class="btn btn-danger">
+                    @*@Html.ActionLink("Delete", "Delete", new { id = emp.Id },new {style="text-decoration:none;color:white;"})*@
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@emp.Id" as class="" style="text-decoration:none;color:white;">Delete</a>
+                    @*@Ajax.ActionLink("Home", "Delete", new { id = emp.Id }, new AjaxOptions { HttpMethod = "POST" })*@
+                </button>
+                <button type="button" class="btn btn-info">
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@emp.Id" class="" style="text-decoration:none;color:white;">Edit</a>
+                </button>
+            </div>
+        </div>
+    }
+</div>

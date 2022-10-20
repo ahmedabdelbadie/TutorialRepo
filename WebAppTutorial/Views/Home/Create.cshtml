@@ -1,0 +1,80 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@inject IEmployeeRepository _emprepo
+@model HomeCreateEmployee
+@using WebAppTutorial.Models
+@{
+    ViewBag.PageTitle = "Create ";
+}
+
+
+
+<form enctype="multipart/form-data" asp-controller="Home" asp-action="Create" id="form-create" method="post">
+    <div class="form-group">
+        <div class="mb-3 row">
+            <label for="inputName">Name</label>
+            <div class="col-sm-10">
+                <input asp-for="Name" class="form-control" placeholder="Enter Name" />
+                <span asp-validation-for="Name" class="text-danger"/>
+                @*@Html.TextBoxFor(m => m.Name,new { @class = "form-control" , placeholder="Enter Name"})*@
+                @*@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputName">Email address</label>
+            <div class="col-sm-10">
+                <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+                <span asp-validation-for="Name" class="text-danger" />
+                @*@Html.TextBoxFor(m => m.Email, new { @class = "form-control" , placeholder="Enter Email"})*@
+                @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })*@
+
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputDepartment">Department</label>
+            <div class="col-sm-10 ">
+                <select asp-for="Department" class="form-control dropdown"
+                        asp-items="@(new SelectList(Enum.GetValues(typeof(Dep))))">
+                    <option>Please select one</option>
+                </select>
+                <span asp-validation-for="Department" class="text-danger" />
+                @*@Html.DropDownListFor(m => m.Department, new SelectList(Enum.GetValues(typeof(Dep))),"Select Department", new { @class = "form-control" })*@
+                @*@Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })*@
+
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPhoto">Photo</label>
+            <div class="col-sm-10">
+
+                <div class="form-group">
+
+                    <div class="custom-file">
+                        <input asp-for="Photo" class="form-control custom-file-input" id="customFile" />
+                        <label class="custom-file-label" for="Photo">Choose file</label>
+                    </div>
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <div class="mb-3 row">
+        <label for="inputDepartment">count of user</label>
+        <div class="col-sm-10">
+            
+            @_emprepo.GetCount().ToString()
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <script type="text/javascript">
+        // Add the following code if you want the name of the file appear on select
+        //$(".custom-file-input").on("change", function () {
+        //    var fileName = $(this).val().split("\\").pop();
+        //    console.log(fileName);
+        //    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        //});
+    </script>
+}  

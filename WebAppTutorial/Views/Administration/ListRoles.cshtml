@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<IdentityRole>
+@{
+    ViewBag.PageTitle = "List Roles";
+}
+<h1>All Roles </h1>
+<a class="btn btn-primary" style="width:auto" asp-action="CreateRole" asp-controller="Administration">Create role</a>
+@if(Model.Any()){
+
+    foreach (var role in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">Role ID : @role.Id</div>
+            <div class="card-body">
+                <h5 class="card-title">@role.Name</h5>
+                <div class="card-footer">
+                    <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
+                    <a class="btn btn-primary"  asp-action="EditRole" asp-controller="Administration" asp-route-id="@role.Id">Edit</a>
+                    <span id="deleteconfirmspan_@role.Id" style="display:none">
+                        <span>Are you sure to delete the user ?</span>
+                        <button type="submit" class="btn btn-danger">Yes</button>
+                        <a href="#" class="btn btn-primary" onclick="confirmDelete('@role.Id',false)">No</a>
+                    </span>
+                    <span id="deletespan_@role.Id">
+                        <a href="#" class="btn btn-danger" onclick="confirmDelete('@role.Id',true)">Delete</a>
+                    </span>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    }
+}else{
+    <div class="card mb-3" >
+        <div class="card-header"> No Roles Created Yet</div>
+         <div class="card-body">
+             <h5 class="card-title"> use the link below to create the role</h5>
+             <a class="btn btn-primary" style="width:auto" asp-action="CreateRole" asp-controller="Administration">Create role</a>
+        </div>
+    </div>
+}
+
+@section Scripts{
+    <script src="~/js/site.js"></script>
+}

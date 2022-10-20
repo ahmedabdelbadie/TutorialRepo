@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Microsoft.AspNetCore.Identity
+@using WebAppTutorial.Models
+@inject SignInManager<ApplicationUser> signInManager
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jqueryui/jquery-ui.js"></script>
+
+    <title>@ViewBag.PageTitle</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse  justify-content-between" id="navbarSupportedContent" ba>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Create">Create</a>
+                    </li>
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                       @* <li class="nav-item">
+                            <a class="nav-link" asp-controller="Administration" asp-action="ListRoles">Manage Roles</a>
+                        </li>*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                           data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" >Manage</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" asp-controller="Administration" asp-action="ListRoles">Manage Roles</a></li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Administration" asp-action="ListUsers">Manage Users</a>
+                                </li>
+
+                    </ul>
+
+                        </li>
+                    }
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    @if(signInManager.IsSignedIn(User)){
+                        <li class="nav-item">
+                            <form method="POST" asp-action="logout" asp-controller="Account">
+
+                                <button class="btn btn-link nav-link py-0" type="submit">Logout @User.Identity.Name</button>
+
+                            </form>
+                        </li>
+                    }else{
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                    }
+                    
+                </ul>
+            </div>
+           
+        </nav>
+       
+        <div>
+            @RenderBody()
+        </div>
+
+    </div>
+    @if (IsSectionDefined("Scripts"))
+    {
+        
+        @RenderSection("Scripts",required: false);
+    }
+</body>
+</html>
