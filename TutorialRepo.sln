@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppTutorial", "WebAppTutorial\WebAppTutorial.csproj", "{D1E5555B-92F5-4235-8959-E4D5D09825AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolvePayroll", "SolvePayroll\SolvePayroll.csproj", "{258A3D21-2918-4C65-B0B5-478AB00EF195}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D1E5555B-92F5-4235-8959-E4D5D09825AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1E5555B-92F5-4235-8959-E4D5D09825AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1E5555B-92F5-4235-8959-E4D5D09825AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258A3D21-2918-4C65-B0B5-478AB00EF195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258A3D21-2918-4C65-B0B5-478AB00EF195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258A3D21-2918-4C65-B0B5-478AB00EF195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258A3D21-2918-4C65-B0B5-478AB00EF195}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
