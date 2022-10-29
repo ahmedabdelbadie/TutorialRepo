@@ -32,7 +32,7 @@ namespace SolvePayroll.Business
             empR = new EmployeePerMonthReport();
             var dayList = new List<DayReport>();
             month = 10 ;
-            emp = 502;
+            emp = 504;
             empR.EmployeeID = emp;
             empR.Year = 2022;
             empR.Month = month;
