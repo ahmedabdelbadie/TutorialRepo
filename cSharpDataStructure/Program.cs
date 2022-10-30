@@ -1,9 +1,11 @@
-﻿using OpenHashTable;
+﻿using cSharpDataStructure.DataStructure;
+using OpenHashTable;
 
 public static class Program
 {
     static void Main(string[] args)
     {
+        /*
         HashTable<int, int> H = new HashTable<int, int>();
 
         Console.WriteLine("Executing Open Hash Table");
@@ -18,11 +20,31 @@ public static class Program
             H.Remove(i);
 
         H.Print();
+        */
+        OpenHashTable<int, int> OH = new OpenHashTable<int, int>();
+
+         Console.WriteLine("Executing Open Hash Table");
+         Console.WriteLine();
+
+         for (int i = 0; i < 100; i++)
+             OH.Insert(i, i);
+
+         OH.Print();
+         
+        //for (int i = 0; i < 100; i += 2)
+        //    H.Remove(i);
+
+        //H.Print();
 
         Console.ReadKey();
-        Console.WriteLine("Test");
+        //    Console.WriteLine("Test");
+        //HeaderLinkedList headerLinkedList = new HeaderLinkedList();
+        //for (int i = 0; i < 100; i++)
+        //    headerLinkedList.AddNode(i);
+        //headerLinkedList.print();
+
     }
 
-   
+
 }
 
