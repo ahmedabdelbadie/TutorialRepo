@@ -1,50 +1,44 @@
 ﻿using cSharpDataStructure.DataStructure;
 using OpenHashTable;
+using System.Collections;
 
 public static class Program
 {
+   
     static void Main(string[] args)
     {
-        /*
-        HashTable<int, int> H = new HashTable<int, int>();
 
-        Console.WriteLine("Executing Open Hash Table");
+        Console.WriteLine("Please enter the string:");
+        Console.Write("Input String -> ");
+        string input = Console.ReadLine();
+
+        /*Console.WriteLine("Enter Path: ");
+        string filePath = @"" + Console.ReadLine();
+        FileInfo file = new FileInfo(filePath);
+        string input = File.ReadAllText(filePath);
+        */
+
+        HuffmanTree huffmanTree = new HuffmanTree(input);
+        // Encode
+        BitArray encoded = huffmanTree.Encode(input);
+
+        Console.Write("Encoded: ");
+        foreach (bool bit in encoded)
+        {
+            Console.Write((bit ? 1 : 0) + "");
+        }
         Console.WriteLine();
 
-        for (int i = 0; i < 100; i++)
-            H.Insert(i, i);
+        // Decode
+        string decoded = huffmanTree.Decode(encoded);
 
-        H.Print();
+        Console.WriteLine("Decoded: " + decoded);
 
-        for (int i = 0; i < 100; i += 2)
-            H.Remove(i);
-
-        H.Print();
-        */
-        OpenHashTable<int, int> OH = new OpenHashTable<int, int>();
-
-         Console.WriteLine("Executing Open Hash Table");
-         Console.WriteLine();
-
-         for (int i = 0; i < 100; i++)
-             OH.Insert(i, i);
-
-         OH.Print();
-         
-        //for (int i = 0; i < 100; i += 2)
-        //    H.Remove(i);
-
-        //H.Print();
-
+        Console.ReadLine();
+        
         Console.ReadKey();
-        //    Console.WriteLine("Test");
-        //HeaderLinkedList headerLinkedList = new HeaderLinkedList();
-        //for (int i = 0; i < 100; i++)
-        //    headerLinkedList.AddNode(i);
-        //headerLinkedList.print();
+
 
     }
-
-
 }
 

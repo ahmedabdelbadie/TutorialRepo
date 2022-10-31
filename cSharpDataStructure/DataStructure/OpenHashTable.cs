@@ -56,7 +56,7 @@ namespace OpenHashTable
             }
             public int CompareTo(OpenHashTable<TKey, TValue>.Point? p)
             {
-                int retVal = _x.CompareTo( p._x);
+                int retVal = _x.CompareTo(p._x);
                 if (retVal != 0)
                 {
                     return retVal;
@@ -216,6 +216,7 @@ namespace OpenHashTable
             if (h.next.key.Equals(key))
             {
                 HT[i].next = HT[i].next.next;
+                HT[i].Count--;
                 numItems--;
                 return true;
             }
@@ -228,6 +229,7 @@ namespace OpenHashTable
                     if (p.next.key.Equals(key))
                     {
                         p.next = p.next.next;
+                        HT[i].Count--;
                         numItems--;
                         return true;
                     }
