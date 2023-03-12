@@ -27,8 +27,8 @@ namespace Google_Calendar_API.Auth
                 return _calendarService;
             }
         }
-        public const string _clientID = "1025118665607-jmcthl16tglp88a3694bm1b4lh4nqvjk.apps.googleusercontent.com";
-        public const string _clientsecret = "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";
+        public const string _clientID = "**************************";
+        public const string _clientsecret = "***********************";
 
         public GoogleAuthenticationOauth2()
         {
