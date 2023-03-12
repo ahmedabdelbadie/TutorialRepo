@@ -17,12 +17,5 @@ namespace SolvePayroll.Repo
         public T GetById(int id);
         public void Remove(T entity);
         public void RemoveRange(IEnumerable<T> entities);
-        //public T GetById(int id);
-        //public T Delete(int id);
-        //public T Update(T item);
-        //public IEnumerable<T> FetchAll();
-        //public T Add(T item);
-
-
     }
 }

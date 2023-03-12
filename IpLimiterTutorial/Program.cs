@@ -1,4 +1,5 @@
 using AspNetCoreRateLimit;
+using Hangfire;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMemoryCache();
@@ -26,6 +27,8 @@ builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>()
 //builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimiting")); //app.UseClientRateLimiting();
 builder.Services.Configure<ClientRateLimitOptions>(builder.Configuration.GetSection("ClientRateLimiting")); //app.UseClientRateLimiting();
 builder.Services.Configure<ClientRateLimitPolicies>(builder.Configuration.GetSection("ClientRateLimitPolicies")); //app.UseClientRateLimiting();
+//builder.Services.AddHangfire(x => x.UseSqlServerStorage(@"Server=AHMEDBADEA;Database=hangfire-webapi-db;Trusted_Connection=Yes;"));
+//builder.Services.AddHangfireServer();
 builder.Services.AddInMemoryRateLimiting();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -42,7 +45,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+//app.UseHangfireDashboard();
 app.UseAuthorization();
 
 app.MapControllers();

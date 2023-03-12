@@ -1,4 +1,7 @@
+using IdentityModel.Client;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Reflection;
 
 namespace IpLimiterTutorial.Controllers
 {
@@ -21,6 +24,7 @@ namespace IpLimiterTutorial.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            AuthorizeAsync();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -29,5 +33,35 @@ namespace IpLimiterTutorial.Controllers
             })
             .ToArray();
         }
+
+    public void AuthorizeAsync()
+    {
+        TokenClientOptions tokenClientOption = new TokenClientOptions
+        {
+            ClientId = "coltcoffee",
+            ClientSecret = "G6Ht0AoZFj"
+        };
+
+        HttpClient client = HttpClientFactory.Create();
+
+        client.BaseAddress = new Uri("https://dafateridentity.azurewebsites.net/connect/token");
+
+        var tokenClient = new TokenClient(client, tokenClientOption);
+            //"SystemAPI.Document.Write"
+        Task<TokenResponse>? tokenResponse = tokenClient.RequestTokenAsync("client_credentials");
+
+
+        if (tokenResponse.Result.IsError)
+        {
+                var s = tokenResponse.Result?.HttpStatusCode;
+           
+           
+        }
+        var aa= tokenResponse.Result.AccessToken;
+
+       
+
+
     }
+}
 }

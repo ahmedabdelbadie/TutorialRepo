@@ -34,6 +34,7 @@ namespace WebAppTutorial
             //    opt.Filters.Add(new AuthorizeFilter(policy));
             //}
             );
+            
             Services.AddScoped<IEmployeeRepository, SQLEmployeeRepo>();
 
             //services.AddDbContext<AppDbContext>(options =>
@@ -87,7 +88,7 @@ namespace WebAppTutorial
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
-
+            //app.UseHangfireDashboard();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

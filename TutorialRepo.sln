@@ -9,7 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolvePayroll", "SolvePayrol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cSharpDataStructure", "cSharpDataStructure\cSharpDataStructure.csproj", "{9EFFCB54-467F-4876-BA53-3787AD897037}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpLimiterTutorial", "IpLimiterTutorial\IpLimiterTutorial.csproj", "{F6104DFC-BF37-4661-AF8D-56FBF6A30DD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpLimiterTutorial", "IpLimiterTutorial\IpLimiterTutorial.csproj", "{F6104DFC-BF37-4661-AF8D-56FBF6A30DD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorTutorial", "RazorTutorial\RazorTutorial.csproj", "{F083A68A-BD02-45D7-AC3D-142D25DD5E6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threading", "Threading\Threading.csproj", "{3DCEA103-DDD2-438B-9295-E956BA1CDDB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google-Calendar-API", "Google-Calendar-API\Google-Calendar-API.csproj", "{E3E736DB-F6D6-4888-9363-F2DB3B32C800}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoogleCalendar", "GoogleCalendar\GoogleCalendar.csproj", "{513DA152-2410-4B84-ADB7-2625E3B784FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustForTest", "JustForTest\JustForTest.csproj", "{2DD13960-5C94-4999-8C28-16A17495B8BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +43,26 @@ Global
 		{F6104DFC-BF37-4661-AF8D-56FBF6A30DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6104DFC-BF37-4661-AF8D-56FBF6A30DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6104DFC-BF37-4661-AF8D-56FBF6A30DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F083A68A-BD02-45D7-AC3D-142D25DD5E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F083A68A-BD02-45D7-AC3D-142D25DD5E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F083A68A-BD02-45D7-AC3D-142D25DD5E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F083A68A-BD02-45D7-AC3D-142D25DD5E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCEA103-DDD2-438B-9295-E956BA1CDDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCEA103-DDD2-438B-9295-E956BA1CDDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCEA103-DDD2-438B-9295-E956BA1CDDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCEA103-DDD2-438B-9295-E956BA1CDDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E736DB-F6D6-4888-9363-F2DB3B32C800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E736DB-F6D6-4888-9363-F2DB3B32C800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E736DB-F6D6-4888-9363-F2DB3B32C800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E736DB-F6D6-4888-9363-F2DB3B32C800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513DA152-2410-4B84-ADB7-2625E3B784FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513DA152-2410-4B84-ADB7-2625E3B784FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513DA152-2410-4B84-ADB7-2625E3B784FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513DA152-2410-4B84-ADB7-2625E3B784FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD13960-5C94-4999-8C28-16A17495B8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD13960-5C94-4999-8C28-16A17495B8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD13960-5C94-4999-8C28-16A17495B8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD13960-5C94-4999-8C28-16A17495B8BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
