@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google-Calendar-API", "Goog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoogleCalendar", "GoogleCalendar\GoogleCalendar.csproj", "{513DA152-2410-4B84-ADB7-2625E3B784FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustForTest", "JustForTest\JustForTest.csproj", "{2DD13960-5C94-4999-8C28-16A17495B8BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueue", "JustForTest\PriorityQueue.csproj", "{2DD13960-5C94-4999-8C28-16A17495B8BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
